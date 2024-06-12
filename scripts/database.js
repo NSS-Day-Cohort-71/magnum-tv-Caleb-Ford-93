@@ -111,6 +111,11 @@ const database = {
             }
 ]};
 
-export const getShows = () => {
-  return null
-}
+export const getShows = () => 
+    database.shows.map((show) => ({ ...show }))
+
+export const getActors = () => 
+  database.actors.map((actor) => ({ ...actor }))
+
+export const getGenres = () => 
+  database.genres.map((genre) => ({ ...genre }))
