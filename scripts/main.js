@@ -4,13 +4,20 @@ import { ShowList } from "./ShowList.js"
 
 const html = `
       <div>
+        <section id="actorList" class = "list">
         <h2>Actors</h2>
-        <section id="actorList" class = "list">${ActorList()}</section>
+        ${ActorList()}
+        </section>
+        
+        <section id="genreList" class = "list">
         <h2>Genres</h2>
-        <section id="genreList" class = "list">${GenreList()}</section>
+        ${GenreList()}
+        </section>
       </div>
-        <h2>Shows</h2>
-      <section id="showList" class = "list">${ShowList()}</section>
+      <section id="showList" class = "list">
+      <h2>Shows</h2>
+      ${ShowList()}
+      </section>
 `
 const container = document.querySelector("#content")
 container.innerHTML = html
