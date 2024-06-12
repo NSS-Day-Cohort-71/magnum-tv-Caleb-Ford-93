@@ -23,11 +23,27 @@ export const GenreList = () => {
     return genreHTML
 }
 //create click event listener on genre list items
+document.addEventListener(
+    "click",
+    (clickEvent) => {
+        const itemClicked = clickEvent.target
     //check if click target has dataset.type === genre
-    //if true:
+        if(itemClicked.dataset.type === "genre"){
+            //if true:
         //invoke getShows() and store in variable "allShows"
+        const allShows = getShows()
         //declare "showsOfThisGenre" variable as empty string
+        let showsOfThisGenre = ``
         //iterate through "allShows" with for of loop
-            //for each show, if show's genreId === genre's id
+        for (const show of allShows) {
+             //for each show, if show's genreId === genre's id
+             if(show.genreId.includes(parseInt(itemClicked.dataset.id))){
                 //append show to "showsOfThisGenre"
+                showsOfThisGenre += `${show.name}\n`
+             }       
+        }
         // window.alert: These shows are in (genreName): (list shows)
+        window.alert(`These shows are a ${itemClicked.dataset.name}:\n${showsOfThisGenre}`)
+        }
+    }
+)

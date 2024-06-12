@@ -17,7 +17,7 @@ export const ShowList = () => {
         //for each show, iterate through genres with for..of loop
         for (const genre of allGenres) {
             //if genre.id === show.genreId
-            if(genre.id === show.genreId) {
+            if(show.genreId.includes(genre.id)) {
                 //append genre.name to genre variable
                 currentGenre += `${genre.name} `
             }      
@@ -25,7 +25,7 @@ export const ShowList = () => {
         //for each show, iterate through actors with for..of loop
         for (const actor of allActors) {
             //if actor.showId === show.Id
-            if(actor.showId === show.id){
+            if(actor.showId.includes(show.id)){
                 //append actor.name to actor variable with \n
                 currentActor += `${actor.name}\n`
             }
