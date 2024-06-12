@@ -1,0 +1,14 @@
+Table Actors {
+    id int [pk]
+    showId int [ref: > "Shows"."id"]
+    name varchar
+}
+Table Shows {
+    id int [pk]
+    genreId int [ref: > "Genres"."id"]
+    name varchar
+}
+Table Genres {
+    id int [pk]
+    name varchar
+}
